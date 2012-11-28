@@ -1,10 +1,14 @@
 /**
  * Script para cargar publicidad tipo skin (full background) clicable
  *
- * @param object { img: string, url: string }
+ * @param object { img: string, url: string, width: int, height: int}
  * @return null
  */
 function publiSkin ( args ) {
+
+	args.width = args.width || 980;
+	args.height = args.height || 90;
+	
 	var adLink = document.createElement('a');
 	adLink.style.position = 'fixed';
 	adLink.style.width = '100%';
@@ -24,4 +28,15 @@ function publiSkin ( args ) {
 	adBackground.appendChild( adLink );
 	adLink.href = args.url
 	document.body.insertBefore( adBackground, document.body.firstChild);
+	
+	var script = document.getElementById(args.id);
+	
+	var aux = document.createElement('a');
+	aux.href = args.url;
+	aux.target = '_blank';
+	aux.style.width = args.width + 'px';
+	aux.style.height = args.height + 'px';
+	aux.style.display = 'block';
+	
+	script.parentNode.appendChild(aux);
 }
