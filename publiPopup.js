@@ -37,10 +37,10 @@ function ads(args) {
 	var css = '';
 	var style = null;
 	img.onload = function() {
-		css += '.' + prefix + '_overlay {z-index:997; width:100%; height:100%; position:fixed; top: 0px; left: 0px; background:#000; opacity:0.2;}';
-		css += '.' + prefix + '_div {z-index:999; position:fixed; top: 50%; margin-top:-' + img.height / 2 + 'px; left: 50%; margin-left:-' + (img.width / 2) + 'px; max-width: ' + args.width + 'px; max-height: ' + args.width + 'px;}';
-		css += '.' + prefix + '_bg {z-index:998; position:fixed; top: 50%; margin-top:-' + args.height / 2 + 'px; border:solid 5px #000; left:50%; margin-left:-' + args.width / 2 + 'px; width:' + args.width + 'px; height:' + args.height + 'px; background:#666; opacity:0.7;}';
-		css += '.' + prefix + '_close {z-index:999; cursor:pointer; display:block; text-decoration:none; color:#FFF; position:absolute; top: 5px; right:10px;}';
+		css += '.' + prefix + '_overlay {z-index:997; width:100%; height:100%; position:fixed; top: 0px; left: 0px;background-color:#000;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";filter:alpha(opacity=60);-moz-opacity: 0.0;opacity: 0.6;}';
+		css += '.' + prefix + '_div {z-index:999; position:fixed; top: 50%; margin-top:-' + ((args.height / 2) - 7) + 'px;left:50%; margin-left:-' + ((args.width / 2) - 7 ) + 'px; width:' + args.width + 'px; height:' + args.height + 'px;}';
+		css += '.' + prefix + '_bg {z-index:998; position:fixed; top: 50%; margin-top:-' + ((args.height / 2)) + 'px;left:50%; margin-left:-' + ((args.width / 2)) + 'px; width:' + (args.width+14) + 'px; height:' + (args.height+14) + 'px; background:#666; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; filter:alpha(opacity=60);-moz-opacity: 0.6;	opacity: 0.6;overflow: hidden;	-moz-box-shadow: rgba(0,0,0,1) 0 4px 30px;-webkit-box-shadow: rgba(0,0,0,1) 0 4px 30px;	-khtml-box-shadow: rgba(0,0,0,1) 0 4px 30px;box-shadow: rgba(0,0,0,1) 0 4px 30px;}';
+		css += '.' + prefix + '_close {background:#AAAAAA;border: 1px solid #999999;color: #FFFFFF;cursor: pointer;display: block;font-size: 13px;font-weight: normal;height: 15px; *height: 14px;line-height: 90%;margin: 0;padding: 0;position: absolute;right: -17px;text-align: center;text-decoration: none;top: -16px;width: 15px;z-index: 999;}';
 
 		style = document.createElement('style');
 		style.type = 'text/css';
@@ -80,8 +80,8 @@ function ads(args) {
 	var closeButton = document.createElement('a');
 	//closeButton.setAttribute('class', prefix + '_close');
 	closeButton.className = prefix + '_close';
-	closeButton.innerHTML = 'X';
-	bg.appendChild(closeButton);
+	closeButton.innerHTML = '&#120;';
+	div.appendChild(closeButton);
 
 	setTimeout(function() {
 		close();
