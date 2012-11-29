@@ -37,9 +37,9 @@ function ads(args) {
 	var css = '';
 	var style = null;
 	img.onload = function() {
-		css += '.' + prefix + '_overlay {z-index:997; width:100%; height:100%; position:absolute; top: 0px; left: 0px; background:#000; opacity:0.2;}';
+		css += '.' + prefix + '_overlay {z-index:997; width:100%; height:100%; position:fixed; top: 0px; left: 0px; background:#000; opacity:0.2;}';
 		css += '.' + prefix + '_div {z-index:999; position:fixed; top: 50%; margin-top:-' + img.height / 2 + 'px; left: 50%; margin-left:-' + (img.width / 2) + 'px; max-width: ' + args.width + 'px; max-height: ' + args.width + 'px;}';
-		css += '.' + prefix + '_bg {z-index:998; position:absolute; top: 50%; margin-top:-' + args.height / 2 + 'px; border:solid 5px #000; left:50%; margin-left:-' + args.width / 2 + 'px; width:' + args.width + 'px; height:' + args.height + 'px; background:#666; opacity:0.7;}';
+		css += '.' + prefix + '_bg {z-index:998; position:fixed; top: 50%; margin-top:-' + args.height / 2 + 'px; border:solid 5px #000; left:50%; margin-left:-' + args.width / 2 + 'px; width:' + args.width + 'px; height:' + args.height + 'px; background:#666; opacity:0.7;}';
 		css += '.' + prefix + '_close {z-index:999; cursor:pointer; display:block; text-decoration:none; color:#FFF; position:absolute; top: 5px; right:10px;}';
 
 		style = document.createElement('style');
