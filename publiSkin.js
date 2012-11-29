@@ -24,6 +24,8 @@ function artvisualAds ( args ) {
 	adLink.style.marginRight = 'auto';
 	adLink.style.left = adLink.style.top = 0;
 	adLink.style.zIndex = 0;
+	adLink.href = args.url
+	adLink.target= '_blank';
 	
 	var adBackground = document.createElement('div');
 	adBackground.style.background = "#FFFFFF url(" + args.img + ") no-repeat 50% 0";
@@ -33,7 +35,7 @@ function artvisualAds ( args ) {
 	adBackground.style.top = 0;
 	adBackground.style.zIndex = 0;
 	adBackground.appendChild( adLink );
-	adLink.href = args.url
+	
 	document.body.insertBefore( adBackground, document.body.firstChild);
 	
 	var script = document.getElementById(args.id);
