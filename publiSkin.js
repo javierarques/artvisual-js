@@ -1,10 +1,17 @@
 /**
  * Script para cargar publicidad tipo skin (full background) clicable
  *
- * @param object { img: string, url: string, width: int, height: int}
+ * @param object { 
+ 	img: string, // URL de la imagen
+ 	url: string, // URL del anunciante
+ 	width: int, // Ancho de la zona
+ 	height: int, // Alto de la zona
+ 	id: int // ID del script. Importante, se le ha de poner un ID al script en el DFP
+ }
  * @return null
+ *
  */
-function publiSkin ( args ) {
+function artvisualAds ( args ) {
 
 	args.width = args.width || 980;
 	args.height = args.height || 90;
